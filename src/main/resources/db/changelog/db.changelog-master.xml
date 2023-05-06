@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>   
+<databaseChangeLog  
+    xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog
+                      http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.8.xsd">  
+	<include  file="db/changelog/changes/20201027175100_create_user_tables.xml"/>
+	<include  file="db/changelog/changes/20201117110500_create_purchase_tables.xml"/>
+	<include file="db/changelog/changes/20201121140821_create_supply_table.xml"/>
+    <include  file="db/changelog/changes/20201027175100_create_file_tables.xml"/>
+    <include file="db/changelog/changes/20201201151500_create_question_tables.xml"/>
+	<include file="db/changelog/changes/20201201150500_create_answer_tables.xml"/>
+	<include file="db/changelog/changes/20201212211252_create_log_table.xml"/>
+	<include file="db/changelog/changes/20201216115700_create_log_table.xml"/>
+    <include file="db/changelog/changes/20201219202328_create_telegram_users_table.xml"/>
+</databaseChangeLog>

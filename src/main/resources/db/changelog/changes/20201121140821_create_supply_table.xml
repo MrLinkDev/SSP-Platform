@@ -1,0 +1,48 @@
+<databaseChangeLog
+        xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.8.xsd">
+    <changeSet id="1" author="Alexander Gorbunov">
+        <createTable tableName="supply">
+            <column name="id" type="UUID">
+                <constraints primaryKey="true" primaryKeyName="supply_pkey" nullable="false"/>
+            </column>
+
+            <column name="purchase_id" type="UUID">
+                <constraints nullable="false" foreignKeyName="fk_purchase" referencedTableName="purchases" referencedColumnNames="id"/>
+            </column>
+
+            <column name="description" type="text">
+                <constraints nullable="false"/>
+            </column>
+
+            <column name="create_date" type="bigint">
+                <constraints nullable="false"/>
+            </column>
+
+            <column name="author" type="text">
+                <constraints nullable="false" foreignKeyName="username" referencedTableName="users" referencedColumnNames="username"/>
+            </column>
+
+            <column name="budget" type="bigint">
+                <constraints nullable="false"/>
+            </column>
+
+            <column name="comment" type="text">
+                <constraints nullable="false"/>
+            </column>
+
+            <column name="status" type="varchar(50)">
+                <constraints nullable="false"/>
+            </column>
+
+            <column name="result_of_consideration" type="text">
+                <constraints nullable="false"/>
+            </column>
+
+            <column name="result_date" type="bigint">
+                <constraints nullable="false"/>
+            </column>
+        </createTable>
+    </changeSet>
+</databaseChangeLog>

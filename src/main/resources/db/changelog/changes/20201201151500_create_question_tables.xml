@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<databaseChangeLog
+        xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.8.xsd">
+    <changeSet id="13" author="Ivan">
+        <createTable tableName="questions">
+
+            <column name="id" type="UUID">
+                <constraints nullable="false" unique="true" primaryKey="true"/>
+            </column>
+
+            <column name="name" type="varchar(200)">
+                <constraints nullable="false"/>
+            </column>
+
+            <column name="description" type="text">
+                <constraints nullable="false"/>
+            </column>
+
+            <column name="author_username" type="varchar(40)">
+                <constraints nullable="false" foreignKeyName="fk_username" referencedTableName="users" referencedColumnNames="username"/>
+            </column>
+
+            <column name="original_purchase" type="UUID">
+                <constraints nullable="false" foreignKeyName="fk_purchase" referencedTableName="purchases" referencedColumnNames="id"/>
+            </column>
+
+            <column name="publicity" type="text">
+                <constraints nullable="false"/>
+            </column>
+
+            <column name="create_date" type="bigint">
+                <constraints nullable="false"/>
+            </column>
+
+        </createTable>
+    </changeSet>
+</databaseChangeLog>

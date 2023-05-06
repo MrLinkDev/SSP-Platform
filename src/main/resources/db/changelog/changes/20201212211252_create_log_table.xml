@@ -1,0 +1,41 @@
+<databaseChangeLog
+        xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.8.xsd">
+    <changeSet id="1" author="Alexander Gorbunov">
+        <createTable tableName="log">
+            <column name="date" type="timestamp">
+                <constraints nullable="false"/>
+            </column>
+
+            <column name="username" type="text">
+                <constraints nullable="false"/>
+            </column>
+
+            <column name="role" type="text">
+                <constraints nullable="false"/>
+            </column>
+
+            <column name="action_controller" type="text">
+                <constraints nullable="false"/>
+            </column>
+
+            <column name="action_type" type="text">
+                <constraints nullable="false"/>
+            </column>
+
+            <column name="action_params" type="text">
+                <constraints nullable="true"/>
+            </column>
+
+
+            <column name="action_succeed" type="boolean">
+                <constraints nullable="false"/>
+            </column>
+
+            <column name="action_error" type="text">
+                <constraints nullable="true"/>
+            </column>
+        </createTable>
+    </changeSet>
+</databaseChangeLog>
